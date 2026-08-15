@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #1f2d24;
   line-height: 1.6;
   background: #f4f8f4;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -22,6 +27,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 .navbar {
@@ -68,22 +77,28 @@ ul {
 }
 
 .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   background-image: url('images/photo-1441974231531-c6227db76b6e (1).avif');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(10, 30, 15, 0.75), rgba(10, 30, 15, 0.25));
+  background: linear-gradient(to right, rgba(10, 30, 15, 0.8), rgba(10, 30, 15, 0.35));
 }
 
 .hero-content {
   position: relative;
   max-width: 650px;
-  padding: 0 40px;
+  padding: 90px 40px 60px 40px;
   color: white;
+  z-index: 2;
 }
 
 .tag {
@@ -144,6 +159,18 @@ ul {
   background: transparent;
   color: white;
   border-color: white;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 90px;
+  background: #f4f8f4;
+  clip-path: ellipse(65% 100% at 50% 100%);
+  z-index: 3;
 }
 
 .about, .report, .reports {
@@ -417,6 +444,10 @@ ul {
 
   .hero-content h1 {
     font-size: 34px;
+  }
+
+  .hero-content {
+    padding-top: 110px;
   }
 
   .cards {

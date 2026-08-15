@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clean Community</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="top">
+  <nav class="navbar">
+    <div class="logo"> Clean Community</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#report">Report</a></li>
+      <li><a href="#reports">Reports</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="tag">A student initiative</span>
+    <h1>Together for a<br><span>Cleaner</span> Community</h1>
+    <p>Clean Community helps people report cleanliness problems and encourages everyone to take responsibility for creating cleaner and healthier public spaces.</p>
+    <div class="hero-buttons">
+      <a href="#report" class="btn btn-primary">Report a Problem</a>
+      <a href="#reports" class="btn btn-outline">View Reports</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>About Clean Community</h2>
+  <p class="section-text">Our community becomes better when everyone takes responsibility. Clean Community provides a simple way for people to report cleanliness problems and make others aware of issues around them.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">📢</div>
+      <h3>Report Problems</h3>
+      <p>Tell others about garbage, pollution or dirty spots near you.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">👀</div>
+      <h3>Raise Awareness</h3>
+      <p>Let people around you see what needs attention and why it matters.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h3>Build a Cleaner Community</h3>
+      <p>Small reports lead to bigger action and a healthier neighborhood.</p>
+    </div>
+  </div>
+</section>
+
+<section id="report" class="report">
+  <h2>Report a Problem</h2>
+  <p class="section-text">Fill in the details below to let others know about a cleanliness issue.</p>
+
+  <form id="reportForm" class="report-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your name">
+
+    <label for="location">Location</label>
+    <input type="text" id="location" placeholder="Where is the problem?">
+
+    <label for="category">Problem Category</label>
+    <select id="category">
+      <option value="">-- Select category --</option>
+      <option value="Garbage">Garbage</option>
+      <option value="Overflowing Dustbin">Overflowing Dustbin</option>
+      <option value="Dirty Public Area">Dirty Public Area</option>
+      <option value="Water Pollution">Water Pollution</option>
+      <option value="Plastic Waste">Plastic Waste</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="description">Description</label>
+    <textarea id="description" rows="4" placeholder="Describe the problem"></textarea>
+
+    <p id="formError" class="form-error"></p>
+    <p id="formSuccess" class="form-success"></p>
+
+    <button type="submit" class="btn btn-primary">Submit Report</button>
+  </form>
+</section>
+
+<section id="reports" class="reports">
+  <h2>Community Reports</h2>
+
+  <div class="stats">
+    <div class="stat-box">
+      <span id="totalCount">0</span>
+      <p>Community Reports</p>
+    </div>
+    <div class="stat-box">
+      <span id="solvedCount">0</span>
+      <p>Problems Solved</p>
+    </div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="searchBox" placeholder="Search by location or problem...">
+    <select id="categoryFilter">
+      <option value="All">All</option>
+      <option value="Garbage">Garbage</option>
+      <option value="Overflowing Dustbin">Overflowing Dustbin</option>
+      <option value="Dirty Public Area">Dirty Public Area</option>
+      <option value="Water Pollution">Water Pollution</option>
+      <option value="Plastic Waste">Plastic Waste</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div id="reportsList" class="reports-list"></div>
+</section>
+
+<footer class="footer">
+  <h3>Clean Community</h3>
+  <p>Small actions can create a cleaner and better community.</p>
+  <p class="copyright"> 2026 Clean Community</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

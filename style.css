@@ -62,11 +62,11 @@ a {
   align-items: center;
 
   background:
-      linear-gradient(
+    linear-gradient(
         rgba(10, 30, 15, 0.7),
         rgba(10, 30, 15, 0.7)
-      ),
-      url('images/photo-1441974231531-c6227db76b6e (1).avif');
+    ),
+    url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');
 
   background-size: cover;
   background-position: center;

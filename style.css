@@ -53,14 +53,6 @@ a {
   color: #f4b93c;
 }
 
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-}
-
 
 /* Home */
 .hero {
@@ -70,8 +62,10 @@ a {
   align-items: center;
 
   background:
-      linear-gradient(rgba(10, 30, 15, 0.7),
-      rgba(10, 30, 15, 0.7)),
+      linear-gradient(
+        rgba(10, 30, 15, 0.7),
+        rgba(10, 30, 15, 0.7)
+      ),
       url('images/photo-1441974231531-c6227db76b6e (1).avif');
 
   background-size: cover;
@@ -171,7 +165,7 @@ a {
   border-radius: 12px;
   text-align: left;
 
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-icon {
@@ -279,7 +273,7 @@ form .btn {
 
   border-left: 5px solid #f4b93c;
 
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .report-card.solved {
@@ -353,42 +347,4 @@ footer {
 
   text-align: center;
   padding: 35px;
-}
-
-
-/* Mobile */
-@media (max-width: 768px) {
-
-  .nav-links {
-      display: none;
-      position: absolute;
-
-      top: 60px;
-      right: 0;
-
-      background: #12351f;
-      padding: 20px;
-
-      flex-direction: column;
-  }
-
-  .nav-links.show {
-      display: flex;
-  }
-
-  .menu-btn {
-      display: block;
-  }
-
-  .hero h1 {
-      font-size: 35px;
-  }
-
-  .cards {
-      grid-template-columns: 1fr;
-  }
-
-  .filters {
-      flex-direction: column;
-  }
 }

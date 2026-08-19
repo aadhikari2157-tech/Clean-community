@@ -19,25 +19,25 @@ const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
 
-// Mobile menu
+
 menuBtn.onclick = function() {
     navLinks.classList.toggle("show");
 };
 
 
-// Get saved reports
+
 function getReports() {
     return JSON.parse(localStorage.getItem("reports")) || [];
 }
 
 
-// Save reports
+
 function saveReports(reports) {
     localStorage.setItem("reports", JSON.stringify(reports));
 }
 
 
-// Submit report
+
 form.onsubmit = function(event) {
 
     event.preventDefault();
@@ -79,7 +79,7 @@ form.onsubmit = function(event) {
 };
 
 
-// Display reports
+
 function displayReports() {
 
     const reports = getReports();
@@ -121,7 +121,7 @@ function displayReports() {
                 <h3>${report.category}</h3>
 
                 <p class="meta">
-                    📍 ${report.location} | ${report.date}
+                     ${report.location} | ${report.date}
                 </p>
 
                 <p class="desc">
@@ -161,7 +161,6 @@ function displayReports() {
 }
 
 
-// Mark report as solved
 function solveReport(id) {
 
     const reports = getReports();
@@ -180,7 +179,6 @@ function solveReport(id) {
 }
 
 
-// Delete report
 function deleteReport(id) {
 
     const reports = getReports();
@@ -195,10 +193,8 @@ function deleteReport(id) {
 }
 
 
-// Search and filter
 searchBox.oninput = displayReports;
 categoryFilter.onchange = displayReports;
 
 
-// Load reports
 displayReports();

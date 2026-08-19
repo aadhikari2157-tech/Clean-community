@@ -1,4 +1,3 @@
-// Get HTML elements
 const form = document.getElementById("reportForm");
 
 const nameInput = document.getElementById("name");
@@ -26,7 +25,7 @@ menuBtn.onclick = function() {
 };
 
 
-// Get reports from local storage
+// Get saved reports
 function getReports() {
     return JSON.parse(localStorage.getItem("reports")) || [];
 }
@@ -38,7 +37,7 @@ function saveReports(reports) {
 }
 
 
-// Submit form
+// Submit report
 form.onsubmit = function(event) {
 
     event.preventDefault();
@@ -51,19 +50,11 @@ form.onsubmit = function(event) {
     const category = categoryInput.value;
     const description = descriptionInput.value.trim();
 
-
-    // Check empty fields
-    if (name === "" ||
-        location === "" ||
-        category === "" ||
-        description === "") {
-
+    if (!name || !location || !category || !description) {
         formError.textContent = "Please fill in all fields.";
         return;
     }
 
-
-    // Create new report
     const report = {
         id: Date.now(),
         name: name,
@@ -74,24 +65,16 @@ form.onsubmit = function(event) {
         status: "Pending"
     };
 
-
-    // Get old reports
     const reports = getReports();
 
-    // Add new report
     reports.unshift(report);
 
-    // Save reports
     saveReports(reports);
 
-
-    // Show success message
     formSuccess.textContent = "Report submitted successfully!";
 
-    // Clear form
     form.reset();
 
-    // Display reports
     displayReports();
 };
 
@@ -100,12 +83,9 @@ form.onsubmit = function(event) {
 function displayReports() {
 
     const reports = getReports();
-
     const search = searchBox.value.toLowerCase();
-    const category = categoryFilter.value;
+    const selectedCategory = categoryFilter.value;
 
-
-    // Filter reports
     const filteredReports = reports.filter(function(report) {
 
         const searchMatch =
@@ -114,14 +94,12 @@ function displayReports() {
             report.description.toLowerCase().includes(search);
 
         const categoryMatch =
-            category === "All" ||
-            report.category === category;
+            selectedCategory === "All" ||
+            report.category === selectedCategory;
 
         return searchMatch && categoryMatch;
     });
 
-
-    // Update numbers
     totalCount.textContent = reports.length;
 
     solvedCount.textContent =
@@ -129,18 +107,12 @@ function displayReports() {
             return report.status === "Solved";
         }).length;
 
-
-    // No reports
     if (filteredReports.length === 0) {
-
         reportsList.innerHTML =
             "<p class='empty-msg'>No reports found.</p>";
-
         return;
     }
 
-
-    // Show reports
     reportsList.innerHTML = filteredReports.map(function(report) {
 
         return `
@@ -169,14 +141,14 @@ function displayReports() {
                     ${
                         report.status === "Pending"
                         ? `<button class="solve-btn"
-                           onclick="solveReport(${report.id})">
-                           Mark as Solved
-                           </button>`
+                            onclick="solveReport(${report.id})">
+                            Mark as Solved
+                          </button>`
                         : ""
                     }
 
                     <button class="delete-btn"
-                            onclick="deleteReport(${report.id})">
+                        onclick="deleteReport(${report.id})">
                         Delete
                     </button>
 
@@ -223,13 +195,10 @@ function deleteReport(id) {
 }
 
 
-// Search reports
+// Search and filter
 searchBox.oninput = displayReports;
-
-
-// Filter by category
 categoryFilter.onchange = displayReports;
 
 
-// Display reports when page loads
+// Load reports
 displayReports();

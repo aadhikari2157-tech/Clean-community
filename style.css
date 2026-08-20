@@ -21,8 +21,6 @@ a {
   color: inherit;
 }
 
-
-/* Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -53,8 +51,6 @@ a {
   color: #f4b93c;
 }
 
-
-/* Home */
 .hero {
   min-height: 100vh;
 
@@ -107,8 +103,6 @@ a {
   gap: 15px;
 }
 
-
-/* Buttons */
 .btn {
   display: inline-block;
 
@@ -131,8 +125,6 @@ a {
   color: white;
 }
 
-
-/* Sections */
 .section {
   max-width: 1000px;
   margin: auto;
@@ -151,8 +143,6 @@ a {
   color: #4a5b4d;
 }
 
-
-/* About Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -177,8 +167,6 @@ a {
   margin: 10px 0;
 }
 
-
-/* Report Form */
 .report {
   background: #eef4ec;
   border-radius: 20px;
@@ -228,8 +216,6 @@ form .btn {
   margin-top: 10px;
 }
 
-
-/* Statistics */
 .stats {
   display: flex;
   justify-content: center;
@@ -245,8 +231,6 @@ form .btn {
   color: #12351f;
 }
 
-
-/* Search and Filter */
 .filters {
   display: flex;
   justify-content: center;
@@ -258,8 +242,6 @@ form .btn {
   max-width: 400px;
 }
 
-
-/* Report Cards */
 #reportsList {
   display: grid;
   gap: 15px;
@@ -339,8 +321,6 @@ form .btn {
   padding: 30px;
 }
 
-
-/* Footer */
 footer {
   background: #12351f;
   color: white;
